@@ -14,6 +14,7 @@ import subscription from "@/assests/subscribe.png"
 import logo from "@/assests/logo.png"
 import complain from '@/assests/complaint.png'
 import approve from '@/assests/approved.png'
+import { MdPostAdd } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
 import { BsFillPostcardFill } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa6";
@@ -37,6 +38,7 @@ const SupAdminRoutes = [
   { label: "Sellers", route: "/sellers", iconPath: FaUsers },
   { label: "Reports", route: "/reports", iconPath: TbMessageReportFilled },
   { label: "Add Admin", route: "/add-admin", iconPath: RiAdminFill },
+  { label: "Find Post", route: "/find-post", iconPath: BsFillPostcardFill },
 
 ];
 
@@ -44,7 +46,8 @@ const adminRoutes = [
   { label: "Dashboard", route: "/", iconPath: MdDashboard },
   { label: "Reports", route: "/reports", iconPath: MdDashboard },
   { label: "Users", route: "/users", iconPath: FaUsers },
-  { label: "All Post", route: "/all-post", iconPath: BsFillPostcardFill },
+  { label: "Sellers", route: "/sellers", iconPath: FaUsers },
+  { label: "Find Post", route: "/find-post", iconPath: BsFillPostcardFill },
 ]
 
 const NavbarSlider = ({ isOpen, toggleSidebar }: SidebarProps) => {
@@ -103,8 +106,9 @@ const NavbarSlider = ({ isOpen, toggleSidebar }: SidebarProps) => {
       >
         {/* Logo */}
         {isOpen && (
-          <Link href="/" className="flex justify-center mb-6 pt-[20px] pb-[15px]">
-            <Image width={120} height={120} className="max-w-32" src={logo} alt="logo_image" />
+          <Link href="/" className="flex justify-center mb-6 pt-[20px] pb-[10px]">
+            {/* <Image width={120} height={120} className="max-w-32" src={logo} alt="logo_image" /> */}
+            <p className="text-4xl font-bold text-primary">LYKK</p>
           </Link>
         )}
 

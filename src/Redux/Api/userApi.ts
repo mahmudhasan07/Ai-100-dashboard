@@ -32,6 +32,7 @@ const userApi = baseApi.injectEndpoints({
             providesTags: ["all-User"]
         }),
         allUsers: build.query({
+
             query: ({ page, limit, email, role }) => ({
                 url: `/users/${role}?page=${page}&limit=${limit}&search=${email}`,
                 method: "GET"
@@ -45,12 +46,21 @@ const userApi = baseApi.injectEndpoints({
             }),
             providesTags: ["allUsers"]
         }),
-    
+        deleteUser: build.mutation({
+            query: (id) => ({
+                url: `/users/admin-delete/${id}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: ["all-User"]
+        }),
+
         userStatusUpdate: build.mutation({
-            query: (data) => {
+            query: ({ id, status }) => {
                 return {
-                    url: `/user/toggle-user_status/${data?.id}`,
+                    url: `/users/update-status/${id}`,
                     method: "PUT",
+                    body: {status}
+
                 }
             },
             invalidatesTags: ["allUsers"]
@@ -59,4 +69,4 @@ const userApi = baseApi.injectEndpoints({
 })
 
 
-export const { useLoginUserMutation, useAllUsersQuery, useUserStatusUpdateMutation, useSingleUserQuery, useRegisterUserMutation, useAllADMINQuery } = userApi
+export const { useLoginUserMutation, useAllUsersQuery, useUserStatusUpdateMutation, useSingleUserQuery, useRegisterUserMutation, useAllADMINQuery, useDeleteUserMutation } = userApi

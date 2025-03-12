@@ -5,6 +5,7 @@ export interface UserInterFace {
     role: string
     user_status: string
     id: string
+    status: string
     userName : string
 }
 

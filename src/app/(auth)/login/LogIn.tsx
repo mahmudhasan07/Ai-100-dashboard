@@ -64,12 +64,12 @@ const LogIn = () => {
         <div className="flex items-center justify-center min-h-screen ">
             <div className="w-full max-w-md p-6 ">
                 <div className="flex flex-col items-center mb-6">
-                    <Image src={logo} alt="logo" className="mx-auto" width={150} />
+                    {/* <Image src={logo} alt="logo" className="mx-auto" width={150} /> */}
                 </div>
 
                 <h2 className="text-4xl text-center my-4">Hi, Welcome Back! 👋</h2>
                 <p className="text-center text-gray-600 mb-8">
-                    Lets explore <span className='text-primary font-semibold text-lg'>Town'zz</span> diversely
+                    Lets explore <span className='text-primary font-semibold text-lg'>Dashboard</span> diversely
                 </p>
 
                 <form onSubmit={handleLogin}>

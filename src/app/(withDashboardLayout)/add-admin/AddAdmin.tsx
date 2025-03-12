@@ -2,6 +2,7 @@
 import { useRegisterUserMutation } from '@/Redux/Api/userApi';
 import ShowToastify from '@/utils/ShowToastify';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
+import AllAdmin from './AllAdmin';
 
 const AddAdmin = () => {
 
@@ -14,18 +15,18 @@ const AddAdmin = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async(e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         const newData = new FormData()
         const data = { ...formData, role: "ADMIN" };
-        newData.append("bodyData",JSON.stringify(data))
+        newData.append("bodyData", JSON.stringify(data))
 
-        const { error} = await addAdminFn(newData)
+        const { error } = await addAdminFn(newData)
         if (error) {
-            ShowToastify({error : "Admin can't create"})
+            ShowToastify({ error: "Admin can't create" })
             return
         }
-        ShowToastify({success : "Admin created successfully"})
+        ShowToastify({ success: "Admin created successfully" })
     };
 
 
@@ -70,7 +71,7 @@ const AddAdmin = () => {
             </div>
             <div className='my-8'>
                 <h1 className='text-3xl font-semibold mb-8'>Admin Lists</h1>
-
+                <AllAdmin></AllAdmin>
             </div>
         </section>
     );

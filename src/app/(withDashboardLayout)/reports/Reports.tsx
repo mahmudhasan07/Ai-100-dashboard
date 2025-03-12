@@ -19,7 +19,7 @@ const Reports = () => {
 
     const handleDelete = async (id: string) => {
 
-        const { error} = await deleteFn(id)
+        const { error } = await deleteFn(id)
         if (error) {
             ShowToastify({ error: "Unsuccessful to delete the report" })
             return
@@ -52,6 +52,7 @@ const Reports = () => {
                                             </video>
                                         )}
                                     </div>
+                                    <p className="text-sm mt-2">Reported Post ID: {report.post?.id}</p>
                                     <p className="text-sm mt-2">Reported Post: {report.post?.title}</p>
                                     <p className="text-sm">Address: {report.post?.address}</p>
                                     {report.post?.image && (

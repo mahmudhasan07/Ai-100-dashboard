@@ -1,9 +1,9 @@
-import Creator from "./Creator";
+import FindPost from "../FindPost";
 
 export default function Page() {
     return (
         <div>
-            <Creator></Creator>
+            <FindPost />
         </div>
     );
 }
